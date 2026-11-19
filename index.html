@@ -79,19 +79,9 @@ body { margin:0; font-family:Arial, Helvetica, sans-serif; background:#f5f9f6; c
 }
 
 @keyframes splashExit {
-  0% {
-    opacity: 1;
-    visibility: visible;
-  }
-  99% {
-    opacity: 0;
-    visibility: visible;
-  }
-  100% {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-  }
+  0% { opacity: 1; visibility: visible; }
+  99% { opacity: 0; visibility: visible; }
+  100% { opacity: 0; visibility: hidden; pointer-events: none; }
 }
 
 /* Main index page highlight when revealed */
@@ -100,24 +90,27 @@ body { margin:0; font-family:Arial, Helvetica, sans-serif; background:#f5f9f6; c
 }
 
 @keyframes indexHighlight {
-  0% {
-    filter: brightness(0.96);
-    transform: scale(0.992);
-  }
-  50% {
-    box-shadow: inset 0 0 0 5px rgba(59, 98, 120, 0.35);
-  }
-  100% {
-    filter: brightness(1);
-    transform: scale(1);
-    box-shadow: none;
-  }
+  0% { filter: brightness(0.96); transform: scale(0.992); }
+  50% { box-shadow: inset 0 0 0 5px rgba(43, 91, 108, 0.35); }
+  100% { filter: brightness(1); transform: scale(1); box-shadow: none; }
 }
 
-header { background:linear-gradient(120deg,#145b3b,#21875a); color:white; padding:30px 18px; }
+/* Rainy Slate-Blue & Smart Irrigation Header Background (replaces old green header) */
+header {
+  background-color: #1f3f52;
+  background-image:
+    linear-gradient(120deg, rgba(24, 52, 70, 0.82) 0%, rgba(37, 81, 102, 0.72) 55%, rgba(27, 74, 78, 0.82) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 280' preserveAspectRatio='xMidYMid slice'%3E%3Cdefs%3E%3ClinearGradient id='hdrSky' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%231b384a'/%3E%3Cstop offset='55%25' stop-color='%232e627a'/%3E%3Cstop offset='100%25' stop-color='%23215457'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1200' height='280' fill='url(%23hdrSky)'/%3E%3Cg fill='%23cdebfb' opacity='0.24'%3E%3Ccircle cx='880' cy='55' r='48'/%3E%3Ccircle cx='930' cy='48' r='58'/%3E%3Ccircle cx='985' cy='58' r='44'/%3E%3Ccircle cx='1090' cy='65' r='40'/%3E%3Ccircle cx='1135' cy='60' r='48'/%3E%3C/g%3E%3Cg stroke='%23bceaff' stroke-width='2.5' stroke-linecap='round' opacity='0.45'%3E%3Cline x1='860' y1='110' x2='845' y2='155'/%3E%3Cline x1='915' y1='120' x2='900' y2='165'/%3E%3Cline x1='970' y1='105' x2='955' y2='150'/%3E%3Cline x1='1030' y1='118' x2='1015' y2='163'/%3E%3Cline x1='1095' y1='110' x2='1080' y2='155'/%3E%3Cline x1='1150' y1='125' x2='1135' y2='170'/%3E%3C/g%3E%3Cpath d='M0 215 Q300 175 600 210 T1200 195 L1200 280 L0 280 Z' fill='%2317383a' opacity='0.75'/%3E%3Cpath d='M0 240 Q360 215 720 242 T1200 230 L1200 280 L0 280 Z' fill='%23112a2c'/%3E%3Cg stroke='%2388e5c2' stroke-width='3' stroke-dasharray='10 12' fill='none' opacity='0.65'%3E%3Cpath d='M640 228 L1160 228'/%3E%3Ccircle cx='760' cy='228' r='5' fill='%23b8ecff'/%3E%3Ccircle cx='920' cy='228' r='5' fill='%23b8ecff'/%3E%3Ccircle cx='1080' cy='228' r='5' fill='%23b8ecff'/%3E%3C/g%3E%3Cg fill='%236ee0a4' opacity='0.75'%3E%3Cpath d='M760 224 C760 192 732 180 720 192 C732 208 748 214 760 224 Z'/%3E%3Cpath d='M760 224 C760 188 790 176 802 188 C790 205 774 212 760 224 Z'/%3E%3Cpath d='M920 224 C920 186 888 172 874 186 C888 205 906 212 920 224 Z'/%3E%3Cpath d='M920 224 C920 182 954 168 968 182 C954 202 936 210 920 224 Z'/%3E%3Cpath d='M1080 224 C1080 192 1052 180 1040 192 C1052 208 1068 214 1080 224 Z'/%3E%3Cpath d='M1080 224 C1080 188 1110 176 1122 188 C1110 205 1094 212 1080 224 Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  padding: 34px 18px;
+  border-bottom: 3px solid #4fa3b8;
+}
 header .wrap, main { max-width:960px; margin:auto; }
-header h1 { margin:0 0 8px; font-size:clamp(1.7rem,4vw,2.5rem); }
-header p { margin:0; max-width:700px; }
+header h1 { margin:0 0 8px; font-size:clamp(1.7rem,4vw,2.5rem); text-shadow:0 2px 6px rgba(10,25,35,0.45); }
+header p { margin:0; max-width:680px; color:#e3f4fc; text-shadow:0 1px 4px rgba(10,25,35,0.4); }
 main { padding:22px 16px 40px; }
 .notice { background:#fff4d7; border:1px solid #e8d18b; padding:12px 14px; border-radius:12px; margin-bottom:18px; }
 .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; }
